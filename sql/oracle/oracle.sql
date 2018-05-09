@@ -12,6 +12,8 @@ CREATE TABLE dashboard_board (
   category_id NUMBER DEFAULT NULL,
   board_name varchar2(100) NOT NULL,
   layout_json CLOB,
+  create_time TIMESTAMP DEFAULT sysdate,
+  update_time TIMESTAMP DEFAULT sysdate,
   CONSTRAINT dashboard_board_pk PRIMARY KEY (board_id)
 );
 
@@ -42,6 +44,8 @@ CREATE TABLE dashboard_datasource (
   source_name varchar2(100) NOT NULL,
   source_type varchar2(100) NOT NULL,
   config CLOB,
+  create_time TIMESTAMP DEFAULT sysdate,
+  update_time TIMESTAMP DEFAULT sysdate,
   CONSTRAINT dashboard_datasource_pk PRIMARY KEY (datasource_id)
 );
 
@@ -58,6 +62,8 @@ CREATE TABLE dashboard_widget (
   category_name varchar2(100) DEFAULT NULL,
   widget_name varchar2(100) DEFAULT NULL,
   data_json CLOB,
+  create_time TIMESTAMP DEFAULT sysdate,
+  update_time TIMESTAMP DEFAULT sysdate,
   CONSTRAINT dashboard_widget_pk PRIMARY KEY (widget_id)
 );
 
@@ -74,6 +80,8 @@ CREATE TABLE dashboard_dataset (
   category_name varchar2(100) DEFAULT NULL,
   dataset_name varchar2(100) DEFAULT NULL,
   data_json CLOB,
+  create_time TIMESTAMP DEFAULT sysdate,
+  update_time TIMESTAMP DEFAULT sysdate,
   CONSTRAINT dashboard_dataset_pk PRIMARY KEY (dataset_id)
 );
 
